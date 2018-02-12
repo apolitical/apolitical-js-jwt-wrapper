@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { createJwt } = require('./index');
+const { createJwt, isValid } = require('./index');
 
 describe('JWT Library', () => {
   let env;
@@ -33,6 +33,24 @@ describe('JWT Library', () => {
       const payloadPart = Buffer.from(jwt.split('.')[1], 'base64').toString();
       const payload = JSON.parse(payloadPart);
       assert.equal(payload.key, 'value');
+    });
+
+    it('should be valid', () => {
+      const jwt = createJwt({ key: 'value' });
+      assert(isValid(jwt));
+    });
+  });
+
+  describe('isValid', () => {
+    it('should validate a valid JWT', () => {
+      const jwt = createJwt({key: 'value'});
+      assert(isValid(jwt));
+    });
+
+    it('should not validate an invalid JWT', () => {
+      const jwt = createJwt({ key: 'value'});
+      process.env.SESSION_SECRET = '54321';
+      assert(!isValid(jwt));
     });
   });
 });
