@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { createJwt, isValid } = require('./index');
+const { createJwt, isValid, getPayload } = require('./index');
 
 describe('JWT Library', () => {
   let env;
@@ -51,6 +51,21 @@ describe('JWT Library', () => {
       const jwt = createJwt({ key: 'value'});
       process.env.SESSION_SECRET = '54321';
       assert(!isValid(jwt));
+    });
+  });
+
+  describe('getPayload', () => {
+    it('should return the payload', () => {
+      const payload = { key: 'value' };
+      const jwt = createJwt(payload);
+      assert.deepEqual(getPayload(jwt), payload);
+    });
+
+    it('should throw an error if the JWT is invalid', () => {
+      const payload = { key: 'value' };
+      const jwt = createJwt(payload);
+      process.env.SESSION_SECRET = '54321';
+      assert.throws(() => getPayload(jwt), /not valid/);
     });
   });
 });

@@ -25,7 +25,15 @@ const createJwt = (payload) => KJUR.jws.JWS.sign(
 
 const isValid = (jwt) => KJUR.jws.JWS.verifyJWT(jwt, process.env.SESSION_SECRET, {alg: [alg]});
 
+const getPayload = (jwt) => {
+  if(!isValid(jwt)) {
+    throw new Error('JWT is not valid');
+  }
+  return JSON.parse(Buffer.from(jwt.split('.')[1], 'base64').toString());
+};
+
 module.exports = {
   createJwt,
   isValid,
+  getPayload,
 };
