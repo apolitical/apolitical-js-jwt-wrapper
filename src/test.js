@@ -5,7 +5,7 @@ describe('JWT Library', () => {
   let env;
 
   beforeEach(() => {
-    env = process.env;
+    ({ env } = process);
     process.env.SESSION_SECRET = '12345';
   });
 
@@ -43,12 +43,12 @@ describe('JWT Library', () => {
 
   describe('isValid', () => {
     it('should validate a valid JWT', () => {
-      const jwt = createJwt({key: 'value'});
+      const jwt = createJwt({ key: 'value' });
       assert(isValid(jwt));
     });
 
     it('should not validate an invalid JWT', () => {
-      const jwt = createJwt({ key: 'value'});
+      const jwt = createJwt({ key: 'value' });
       process.env.SESSION_SECRET = '54321';
       assert(!isValid(jwt));
     });
