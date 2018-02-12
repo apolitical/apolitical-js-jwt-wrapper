@@ -1,0 +1,22 @@
+{
+  "name": "apolitical-js-jwt-wrapper",
+  "version": "0.0.0",
+  "description": "A simple wrapper for JWTs in Apolitical's JS projects",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apolitical/apolitical-js-jwt-wrapper.git"
+  },
+  "author": "Daniel Mason <daniel.mason@apolitical.co>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apolitical/apolitical-js-jwt-wrapper/issues"
+  },
+  "homepage": "https://github.com/apolitical/apolitical-js-jwt-wrapper#readme",
+  "dependencies": {
+    "jsrsasign": "^8.0.6"
+  }
+}
