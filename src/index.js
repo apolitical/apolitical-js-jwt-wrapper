@@ -16,16 +16,17 @@ const createPayload = (payload) => ({
   ...payload,
 });
 
-const createJwt = (payload) => KJUR.jws.JWS.sign(
+const jwtCreator = (secret) => (payload) => KJUR.jws.JWS.sign(
   'HS256',
   JSON.stringify(getHeader()),
   JSON.stringify(createPayload(payload)),
-  process.env.SESSION_SECRET,
+  secret,
 );
 
-const isValid = (jwt) => KJUR.jws.JWS.verifyJWT(jwt, process.env.SESSION_SECRET, { alg: [alg] });
+const jwtValidator = (secret) => (jwt) => KJUR.jws.JWS.verifyJWT(jwt, secret, { alg: [alg] });
 
-const getPayload = (jwt) => {
+const jwtPayloadExtractor = (secret) => (jwt) => {
+  const isValid = jwtValidator(secret);
   if (!isValid(jwt)) {
     throw new Error('JWT is not valid');
   }
@@ -33,7 +34,7 @@ const getPayload = (jwt) => {
 };
 
 module.exports = {
-  createJwt,
-  isValid,
-  getPayload,
+  jwtCreator,
+  jwtValidator,
+  jwtPayloadExtractor,
 };
