@@ -1,4 +1,5 @@
 const KJUR = require('jsrsasign');
+const { sign, verifyJWT } = KJUR.jws.JWS;
 
 const alg = 'HS256';
 
@@ -16,14 +17,14 @@ const createPayload = (payload) => ({
   ...payload,
 });
 
-const jwtCreator = (secret) => (payload) => KJUR.jws.JWS.sign(
+const jwtCreator = (secret) => (payload) => sign(
   'HS256',
   JSON.stringify(getHeader()),
   JSON.stringify(createPayload(payload)),
   secret,
 );
 
-const jwtValidator = (secret) => (jwt) => KJUR.jws.JWS.verifyJWT(jwt, secret, { alg: [alg] });
+const jwtValidator = (secret) => (jwt) => verifyJWT(jwt, secret, { alg: [alg] });
 
 const jwtPayloadExtractor = (secret) => (jwt) => {
   const isValid = jwtValidator(secret);
