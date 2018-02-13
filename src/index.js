@@ -1,4 +1,5 @@
 const KJUR = require('jsrsasign');
+
 const { sign, verifyJWT } = KJUR.jws.JWS;
 
 const alg = 'HS256';
