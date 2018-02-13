@@ -1,12 +1,13 @@
 {
   "name": "apolitical-js-jwt-wrapper",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A simple wrapper for JWTs in Apolitical's JS projects",
   "main": "src/index.js",
   "scripts": {
     "test": "nyc mocha src/test.js",
     "lint": "eslint src",
-    "coverage": "nyc report --reporter=lcov --reporter=text-summary "
+    "coverage": "nyc report --reporter=lcov --reporter=text-summary",
+    "quality": "npm run test && npm run lint"
   },
   "repository": {
     "type": "git",
