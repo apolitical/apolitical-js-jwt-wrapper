@@ -8,6 +8,7 @@ Change log
 - New NPM Badge
 
 ### Changed:
+- NPM Project name
 - Readme install instructions
 
 [1.0.0] - 2018-02-21

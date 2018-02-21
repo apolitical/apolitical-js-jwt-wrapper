@@ -1,5 +1,5 @@
 {
-  "name": "apolitical-js-jwt-wrapper",
+  "name": "apolitical-jwt-wrapper",
   "version": "1.0.1",
   "description": "A simple wrapper for JWTs in Apolitical's JS projects",
   "main": "src/index.js",
