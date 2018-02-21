@@ -4,7 +4,7 @@ JS JWT Wrapper
 [![GitHub release](https://img.shields.io/github/release/apolitical/apolitical-js-jwt-wrapper.svg)](https://github.com/apolitical/apolitical-js-jwt-wrapper/releases)
 [![GitHub license](https://img.shields.io/github/license/apolitical/apolitical-js-jwt-wrapper.svg)](https://github.com/apolitical/apolitical-js-jwt-wrapper/blob/master/LICENSE)
 [![CircleCI](https://img.shields.io/circleci/project/github/apolitical/apolitical-js-jwt-wrapper/master.svg)](https://circleci.com/gh/apolitical/apolitical-js-jwt-wrapper)
-[![NPM](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/apolitical-jwt-wrapper)
+[![NPM](https://img.shields.io/npm/v/apolitical-jwt-wrapper.svg)](https://www.npmjs.com/package/apolitical-jwt-wrapper)
 
 Creates basic JWT tokens based on a shared secret. Simple wrapper around [jsrsasign].
 
