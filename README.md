@@ -1,6 +1,10 @@
 JS JWT Wrapper
 ==============
 
+[![GitHub release](https://img.shields.io/github/release/apolitical/apolitical-js-jwt-wrapper.svg)](https://github.com/apolitical/kubernetes-secret-maker/releases)
+[![GitHub license](https://img.shields.io/github/license/apolitical/apolitical-js-jwt-wrapper.svg)](https://github.com/apolitical/kubernetes-secret-maker/blob/master/LICENSE)
+[![CircleCI](https://img.shields.io/circleci/project/github/apolitical/apolitical-js-jwt-wrapper/master.svg)](https://circleci.com/gh/apolitical/kubernetes-secret-maker)
+
 Creates basic JWT tokens based on a shared secret. Simple wrapper around [jsrsasign].
 
 Installation
@@ -60,5 +64,12 @@ console.log(getPayload(jwt));
 ```
 { my: 'payload' }
 ```
+
+Contributing
+------------
+
+If you want to help, that's brilliant! Have a look at our [Contributing Guide](CONTRIBUTING.md). We also adhere to a
+[Code of Conduct](CODE_OF_CONDUCT.md), so please check that out, it includes details on who to contact if you have any
+concerns.
 
 [jsrsasign]: https://kjur.github.io/jsrsasign/
