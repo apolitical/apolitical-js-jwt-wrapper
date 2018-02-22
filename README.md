@@ -4,16 +4,15 @@ JS JWT Wrapper
 [![GitHub release](https://img.shields.io/github/release/apolitical/apolitical-js-jwt-wrapper.svg)](https://github.com/apolitical/apolitical-js-jwt-wrapper/releases)
 [![GitHub license](https://img.shields.io/github/license/apolitical/apolitical-js-jwt-wrapper.svg)](https://github.com/apolitical/apolitical-js-jwt-wrapper/blob/master/LICENSE)
 [![CircleCI](https://img.shields.io/circleci/project/github/apolitical/apolitical-js-jwt-wrapper/master.svg)](https://circleci.com/gh/apolitical/apolitical-js-jwt-wrapper)
+[![NPM](https://img.shields.io/npm/v/apolitical-jwt-wrapper.svg)](https://www.npmjs.com/package/apolitical-jwt-wrapper)
 
 Creates basic JWT tokens based on a shared secret. Simple wrapper around [jsrsasign].
 
 Installation
 ------------
 
-Not currently available on npm so install directly from github repo
-
-```
-$ npm install git+ssh://github.com/apolitical/apolitical-js-jwt-wrapper.git
+```bash
+$ npm install --save apolitical-jwt-wrapper
 ```
 
 Usage
@@ -26,7 +25,7 @@ There are three exposed functions, each one takes the shared secret and returns 
 Creates a new jwt.
 
 ```javascript
-const { jwtCreator } = require('apolitical-js-jwt-wrapper');
+const { jwtCreator } = require('apolitical-jwt-wrapper');
 
 const createJwt = jwtCreator('secret');
 const jwt = createJwt({ my: 'payload' });
@@ -40,7 +39,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJteSI6InBheWxvYWQifQ.78bnGeLf_4A3mXZhStnM
 ### jwtValidator
 
 ```javascript
-const { jwtValidator } = require('apolitical-js-jwt-wrapper');
+const { jwtValidator } = require('apolitical-jwt-wrapper');
 
 const isValid = jwtValidator('secret');
 
@@ -54,7 +53,7 @@ true
 ### jwtPayloadExtractor
 
 ```javascript
-const { jwtPayloadExtractor } = require('apolitical-js-jwt-wrapper');
+const { jwtPayloadExtractor } = require('apolitical-jwt-wrapper');
 
 const getPayload = jwtPayloadExtractor('secret');
 
