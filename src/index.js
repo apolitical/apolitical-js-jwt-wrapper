@@ -25,7 +25,13 @@ const jwtCreator = (secret) => (payload) => sign(
   secret,
 );
 
-const jwtValidator = (secret) => (jwt) => verifyJWT(jwt, secret, { alg: [alg] });
+const jwtValidator = (secret) => (jwt) => {
+  try {
+    return verifyJWT(jwt, secret, { alg: [alg] });
+  } catch (e) {
+    return false;
+  }
+};
 
 const jwtPayloadExtractor = (secret) => (jwt) => {
   const isValid = jwtValidator(secret);
