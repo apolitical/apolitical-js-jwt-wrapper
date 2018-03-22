@@ -62,7 +62,7 @@ describe('JWT Library', () => {
 
     it('should not validate empty string', () => {
       const isValid = jwtValidator(secret);
-      assert(!isValid(""));
+      assert(!isValid(''));
     });
   });
 
