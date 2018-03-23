@@ -54,6 +54,16 @@ describe('JWT Library', () => {
       const isValid = jwtValidator('54321');
       assert(!isValid(jwt));
     });
+
+    it('should not validate undefined', () => {
+      const isValid = jwtValidator(secret);
+      assert(!isValid(undefined));
+    });
+
+    it('should not validate empty string', () => {
+      const isValid = jwtValidator(secret);
+      assert(!isValid(''));
+    });
   });
 
   describe('getPayload', () => {
