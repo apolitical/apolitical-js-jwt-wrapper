@@ -20,14 +20,14 @@
   },
   "homepage": "https://github.com/apolitical/apolitical-js-jwt-wrapper#readme",
   "dependencies": {
-    "jsrsasign": "^8.0.6"
+    "jsrsasign": "^8.0.12"
   },
   "devDependencies": {
-    "codecov": "^3.0.0",
+    "codecov": "^3.0.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.9.0",
-    "mocha": "^5.0.4",
-    "nyc": "^11.6.0"
+    "eslint-plugin-import": "^2.11.0",
+    "mocha": "^5.1.1",
+    "nyc": "^11.7.1"
   }
 }
