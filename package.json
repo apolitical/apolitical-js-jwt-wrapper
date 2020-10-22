@@ -1,6 +1,6 @@
 {
   "name": "apolitical-jwt-wrapper",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple wrapper for JWTs in Apolitical's JS projects",
   "main": "src/index.js",
   "scripts": {
@@ -13,21 +13,25 @@
     "type": "git",
     "url": "git+https://github.com/apolitical/apolitical-js-jwt-wrapper.git"
   },
-  "author": "Daniel Mason <daniel.mason@apolitical.co>",
+  "author": "Apolitical Group Limited <engineering@apolitical.co>",
   "license": "MIT",
+  "contributors": [
+    "Daniel Mason <daniel.mason@apolitical.co>",
+    "John Field <john.field@apolitical.co>"
+  ],
   "bugs": {
     "url": "https://github.com/apolitical/apolitical-js-jwt-wrapper/issues"
   },
   "homepage": "https://github.com/apolitical/apolitical-js-jwt-wrapper#readme",
   "dependencies": {
-    "jsrsasign": "^8.0.12"
+    "jsrsasign": "^8.0.24"
   },
   "devDependencies": {
     "codecov": "^3.0.1",
     "eslint": "^5.6.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.11.0",
-    "mocha": "^6.0.0",
+    "mocha": "^8.2.0",
     "nyc": "^14.0.0"
   }
 }
