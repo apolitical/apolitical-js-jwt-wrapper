@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/apolitical/apolitical-js-jwt-wrapper#readme",
   "dependencies": {
-    "jsrsasign": "^8.0.24"
+    "jsrsasign": "^10.0.4"
   },
   "devDependencies": {
     "codecov": "^3.0.1",
